@@ -16,7 +16,6 @@ namespace iyizico_example.Controllers
             _logger = logger;
         }
         
-        public static String odendiMi = "";
         public static String conversation_id = "";
         public static String token = "";
 
