@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <strong style="color:chocolate"><p>@TempData["Payment_Status"]</p></strong>
+</div>
+<form aasp-controller="Home" asp-action="GetPay">
+    <input type="text" name="return_url" value="@Context.Request.Path" hidden />
+    <button type="submit">Submit</button>
+</form>
+<div id="iyzipay-checkout-form" class="responsive"></div>
+
+@Html.Raw(TempData["Checkout_Form"])
+<script type="text/javascript">
+    $(document).ready(function() {
+        alert(@TempData["status"]);
+    });
+</script>
